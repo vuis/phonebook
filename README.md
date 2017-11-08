@@ -1,4 +1,4 @@
-# Phonebook
+# PhoneBook
 This repository contains the code used to create simple JavaFx application.
 
 # About PhoneBook
