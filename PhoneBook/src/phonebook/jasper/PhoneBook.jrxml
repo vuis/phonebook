@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PhoneBook" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d062c72d-ace8-464a-8844-40cba50a9fe0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select * from phonebook.group join numbers on numbers.groupId= phonebook.group.id join data on data.numberId=numbers.id order by data.lastname asc]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="groupName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="number" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="groupId" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="firstname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lastname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numberId" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="1646ccd9-f0c9-4dc5-906c-26f9b4951cc9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="20" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Telefonski imenik]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="118" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="136" y="10" width="100" height="20" uuid="dc107e0a-e9a6-4235-819a-17e5965b3211"/>
+				<textElement>
+					<font size="12" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{firstname}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="136" y="30" width="100" height="20" uuid="84cb9cd5-76e8-4c8f-b876-cb9076559d6b"/>
+				<textElement>
+					<font fontName="Arial" size="12" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lastname}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="136" y="50" width="100" height="20" uuid="3385804b-ac9c-4895-b83b-990b4c70e75f"/>
+				<textElement>
+					<font fontName="Arial" size="12" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="136" y="70" width="100" height="20" uuid="644351e0-4f3a-4dff-b7a4-1b42fe191dfe"/>
+				<textElement>
+					<font fontName="Arial" size="12" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="136" y="90" width="100" height="20" uuid="ee3a0d77-1762-406a-8a73-e6e68549f4c4"/>
+				<textElement>
+					<font fontName="Arial" size="12" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{groupName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="10" width="100" height="20" uuid="0acff528-cca8-471a-b392-49cf2cbff65b"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Ime:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="30" width="100" height="20" uuid="1ae7c9e0-e699-477d-ac4a-7707b6feae40"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Prezime:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="50" width="100" height="20" uuid="0eba30a0-396d-41d4-90a4-79cbaa39ba3f"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Email:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="70" width="100" height="20" uuid="7b2ffd44-d73e-49a9-9811-ea961b8da4db"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Broj telefona:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="90" width="100" height="20" uuid="bfadbd89-e3d9-4e62-b0ed-79b56356647c"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Grupa:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

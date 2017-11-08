@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phonebook.controller.NumbersController">
+   <top>
+      <Pane prefHeight="134.0" prefWidth="651.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane alignment="CENTER" maxHeight="-Infinity" prefHeight="120.0" prefWidth="466.0">
+               <children>
+                  <Label text="Broj:" />
+                  <TextField fx:id="number" maxWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" />
+                  <Button fx:id="showButton" mnemonicParsing="false" onAction="#showAllNumbers" text="Dohvati brojeve" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Ime ili prezime:" GridPane.rowIndex="1" />
+                  <TextField fx:id="name" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#createPdf" prefWidth="100.0" text="Kreiraj pdf" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="124.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="216.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="216.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </Pane>
+   </top>
+   <left>
+      <TableView fx:id="numbersTable" prefHeight="200.0" prefWidth="671.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="numberColumn" minWidth="-1.0" prefWidth="143.0" text="Broj" />
+            <TableColumn fx:id="firstnameColumn" prefWidth="122.0" text="Ime" />
+            <TableColumn fx:id="lastnameColumn" prefWidth="131.0" text="Prezime" />
+            <TableColumn fx:id="emailColumn" prefWidth="137.0" text="Email" />
+            <TableColumn fx:id="groupColumn" prefWidth="27.0" text="Grupa" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#edit" text="Uredi" />
+                  <MenuItem mnemonicParsing="false" onAction="#delete" text="Obriši" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+   </left>
+</BorderPane>
